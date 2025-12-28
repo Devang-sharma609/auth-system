@@ -1,6 +1,7 @@
 package com.devang.auth_server.models;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import org.hibernate.annotations.ColumnDefault;
 
@@ -16,7 +17,7 @@ public class RefreshTokens {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     @OneToOne
     private Users user;

@@ -1,6 +1,7 @@
 package com.devang.auth_server.models;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
@@ -22,7 +23,7 @@ public class Users {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
     
     @Column(unique = true, nullable = false)
     private String username;

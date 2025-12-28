@@ -12,10 +12,10 @@ public class AuthenticationManager {
     @Autowired
     UserRepository userRepository;
 
-    public boolean authenticate(Long userId, String password) {
+    public boolean authenticate(String username, String password) {
         
         String pswdHash = new BCryptPasswordEncoder().encode(password);
 
-        return userRepository.find(userId).getPass_hash().equals(pswdHash);
+        return userRepository.findByUsername(username).getPass_hash().equals(pswdHash);
     }
 }
